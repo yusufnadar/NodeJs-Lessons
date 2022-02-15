@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form class="signup">
+        <input type="text" id="name2" name="name1" placeholder="Ad">
+        <input type="submit" value="kaydet">
+        <p class="geridonus"></p>
+    </form>
+
+
+    <script>
+        /* let password = 'yusuf123';
+        let validator=/[a-z0-9]{7,}/;
+
+        console.log(validator.test(password));
+        console.log(password.search(validator)); */
+
+        const form = document.querySelector('.signup');
+        const geriDonus = document.querySelector('.geridonus');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();            
+            console.log(form.name1.value);
+            const isUser = /^[a-zA-Z]{5,10}$/;
+            if(isUser.test(form.name1.value)){
+                geriDonus.innerText = 'Doğru';
+            }else 
+                geriDonus.innerText = 'Yanlış';
+        });
+
+    </script>
+</body>
+</html>

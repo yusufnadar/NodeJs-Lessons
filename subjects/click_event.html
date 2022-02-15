@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+          list-style-type: none;
+          border:1px solid red;
+          padding:16px;
+          max-width:200px;
+          margin-bottom: 10px;
+        }
+      </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox">
+        <ul>
+          <li>Flutter</li>
+          <li>Python</li>
+          <li>Java</li>
+        </ul>
+        <button disabled>Tıkla</button>
+      </div>
+
+
+    <script>
+        const buton = document.querySelector('button');
+
+        buton.addEventListener('click', function () {
+            console.log('tıklandı');
+        });
+
+        const input = document.querySelector('input');
+
+        input.addEventListener('click', function () {
+            if (input.checked)
+                buton.disabled = false;
+            else
+                buton.disabled = true;
+        });
+
+        const list = document.querySelectorAll('li');
+
+        list.forEach(function (item) {
+
+            item.addEventListener('click', function (e) {
+                if (e.target.style.textDecoration == 'line-through') {
+                    e.target.style.textDecoration = 'none';
+                } else {
+                    e.target.style.textDecoration = 'line-through';
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form class="signup">
+        <input type="text" id="name2" name="name1" placeholder="Ad">
+        <input type="submit" value="kaydet">
+    </form>
+
+    <script>
+        const form = document.querySelector('.signup');
+        //const inputText = document.querySelector('#name');
+        const inputText = document.querySelector('[name=name1]');
+        // name attribute'ü name1 olanı alıyoruz
+
+        form.addEventListener('submit',function(e){
+            e.preventDefault();            
+            console.log(inputText.value);
+            // form harici erişmek istersek textimizin valuesını alıyoruz
+            // console.log(form.name2.value);
+            // formda idsi ya da name kısmı olan yerin valuesı bize değeri verir
+        });
+    </script>
+</body>
+</html>

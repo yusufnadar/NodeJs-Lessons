@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // locale veri kaydetme
+        localStorage.setItem('isim','yusuf');
+        localStorage.isim = 'burak';
+
+        // localden veri okuma
+        console.log(localStorage.getItem('isim'));
+
+        // localden bir veriyi silme
+        localStorage.removeItem('isim');
+
+        // tüm locali temizleme
+        localStorage.clear();
+
+        // locale json veri kaydetme
+        var veriler = [{isim:'yusuf',yas:30},{isim:'burak',yas:40}]
+        localStorage.setItem('veriler',JSON.stringify(veriler));
+
+        // localden json verileri okuma
+        console.log(JSON.parse(localStorage.getItem('veriler')));
+    </script>
+</body>
+</html>

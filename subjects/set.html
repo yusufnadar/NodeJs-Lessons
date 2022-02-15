@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        var sayilar = [1,2,3,1];
+        var sayilar2 = new Set(sayilar);
+        console.log(sayilar2);
+
+        var rakamlar = new Set();
+        rakamlar.add(2);
+        console.log(rakamlar);
+        console.log(rakamlar.size);
+        console.log(rakamlar.has(2));
+
+        
+        // SEMBOLLER
+
+        var pc = {};
+        pc.ad = 'monster';
+
+        const yas1 = Symbol('yas');
+        const yas2 = Symbol('yas');
+
+        pc[yas1] = 2;
+        pc[yas2] = 4;
+        console.log(pc[yas1]);
+
+    </script>
+</body>
+</html>

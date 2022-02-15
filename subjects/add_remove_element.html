@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+          list-style-type: none;
+          border:1px solid red;
+          padding:16px;
+          max-width:200px;
+          margin-bottom: 10px;
+        }
+      </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox">
+        <ul id="yazilimListesi">
+          <li>Flutter</li>
+          <li>Python</li>
+          <li>Java</li>
+        </ul>
+        <button>Tıkla</button>
+      </div>
+
+
+    <script>
+        const buton = document.querySelector('button');
+        //buton.remove();
+        const list = document.querySelector('ul');        
+        buton.addEventListener('click', function () {
+            //list.innerHTML += '<li>Yeni Kurs</li>' // listenin sonuna eleman ekleme
+            const li = document.createElement('li');
+            li.textContent = 'Yeni Kurs';
+            list.prepend(li); // listenin başına eleman ekleme
+            list.append(li); // listenin sonuna eleman ekleme
+        });
+        const list2 = document.getElementById('yazilimListesi').getElementsByTagName('li');
+        list.addEventListener('click',function(e){
+            // eğer bir liste elemanına tıklıyorsak li tetikleniyor
+            if(e.target.tagName === 'LI'){
+                // e.target ise tıkladığımızda tetiklenen element
+                console.log(e.target);
+                e.target.remove();
+            }
+        });
+        // listeye çevirdik çünkü içerisindeki elementler HTMLCollection olarak geliyordu
+        /* Array.from(list2).forEach(function(item){
+            item.addEventListener('click',function(e){
+                console.log('li tetiklendi');
+                //console.log(e.target.remove());
+            });
+        }); */
+    </script>
+</body>
+
+</html>

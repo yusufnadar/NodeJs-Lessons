@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        class Personal{
+            constructor(ad,yas){
+                this.ad = ad,
+                this.yas = yas 
+            }
+            isYap(){
+                console.log(this.ad + ' ' + this.yas);
+                return this;
+            }
+            eveGel(){
+                console.log('eve gelindi');
+                return this;
+            }
+        }
+
+        class Yonetici extends Personal{
+
+            constructor(ad,yas,unvan){
+                super(ad,yas);
+                this.unvan = unvan;
+            }
+
+            personelKov(per){
+                calisanlar = calisanlar.filter((p)=>{
+                    return p.ad != per.ad; 
+                });
+            }
+        }
+        const pers = new Personal('Yusuf',32);
+        pers.isYap().eveGel();
+
+        const yonetici = new Yonetici('Furkan',41,'Prof');
+        console.log(yonetici);
+
+        let calisanlar = [pers,yonetici];
+        console.log(calisanlar);
+
+        yonetici.personelKov(pers);
+        console.log(calisanlar);
+
+    </script>
+</body>
+</html>

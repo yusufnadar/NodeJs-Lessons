@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .basarili {
+            border: 1px solid lime;
+        }
+
+        .basarisiz {
+            border: 2px dotted crimson;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="signup">
+        <input type="text" id="name2" name="name1" placeholder="Ad" style="outline: none;" onfocusout="focusuBitti()"
+            onfocus="focuslandı()">
+        <input type="submit" value="kaydet">
+    </form>
+
+    <script>
+
+        function focuslandı() {
+            console.log('focuslandı');
+        }
+
+        function focusuBitti() {
+            console.log('focusu bitti');
+        }
+
+        const validator = /^[a-z]{5,9}$/;
+
+        const form = document.querySelector('.signup');
+
+        form.addEventListener('keyup', function (e) {
+            //const deger = e.target.value;            
+            form.name1.style.outline = 'none';
+            const girilenDeger = form.name1.value;
+            if (validator.test(girilenDeger)) {
+                form.name1.setAttribute('class', 'basarili');
+            } else {
+                form.name1.setAttribute('class', 'basarisiz');
+            }
+        });
+       /*  document.querySelector('#name2').addEventListener('focus',function(e){
+            form.name1.setAttribute('class','basarisiz');
+        }); */
+
+    </script>
+
+</body>
+
+</html>

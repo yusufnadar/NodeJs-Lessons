@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        function Personel(ad, yas) {
+            this.ad = ad;
+            this.yas = yas;
+
+            /* this.isYap = ()=>{
+                console.log('iş yapıldı');
+            } */
+        }
+
+
+        Personel.prototype.isYap2 = () => {
+            console.log('iş yap 2');
+        }
+
+        function Yonetici(ad, yas, meslek) {
+            Personel.call(this, ad, yas);
+            this.meslek = meslek;
+        }
+
+        Yonetici.prototype = Object.create(Personel.prototype);
+
+        const pers = new Personel('yusuf', 23)
+        // pers.isYap();
+        pers.isYap2();
+        const yonet = new Yonetici('buse', 10, 'Müdür');
+
+    </script>
+</body>
+
+</html>

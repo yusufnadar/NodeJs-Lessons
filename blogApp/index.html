@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+</head>
+
+<body class="grey lighten-3">
+    <!-- Navbar -->
+    <nav class="z-dept-0 indigo lighten-4">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">
+                <img src="img/logo.png" alt="" style="width:64px; margin-top:5px;">
+            </a>
+            <ul id="nav-mobile" class="right hide-10-on-med-and-down">
+                <li class="logged-in">
+                    <a href="#" class="red-text modal-trigger" data-target="modal-account">Hesabınız</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#" class="red-text">Çıkış</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#" class="red-text modal-trigger" data-target="modal-create">Makale Oluştur</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-login">Giriş</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Üyelik Oluştur</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="modal-signup" class="modal">
+        <div class="modal-content">
+            <h4>Üyelik Oluştur</h4><br>
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required>
+                    <label for="signup-email">Email Adresi</label>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" required>
+                        <label for="signup-password">Parola</label>
+                    </div>
+                    <button class="btn yellow darken-2">Kaydet</button>
+            </form>
+        </div>
+    </div>
+    <!-- Üyelik Oluştur Modal -->
+
+    <!-- Giriş Yap Modal -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Giriş Yap</h4><br>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Email Adresi</label>
+                    <div class="input-field">
+                        <input type="password" id="login-password" required>
+                        <label for="login-password">Parola</label>
+                    </div>
+                    <button class="btn yellow darken-2">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-account" class="modal">
+        <div class="modal-content center-align">
+            <h4>Hesap Detayları</h4><br>
+            <div class="account-details"></div>
+        </div>
+    </div>
+    <!-- Makale Oluştur Modal -->
+    <div id="modal-create" class="modal">
+        <div class="modal-content">
+            <h4>Makale Oluştur</h4><br>
+            <form id="create-form">
+                <div class="input-field">
+                    <input type="text" id="title" required>
+                    <label for="title">Makale Başlık</label>
+                    <div class="input-field">
+                        <textarea type="text" id="content" class="materialize-textarea" required></textarea>
+                        <label for="content">Parola</label>
+                    </div>
+                    <button class="btn yellow darken-2">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+    <script>
+       /*  document.addEventListener('DOMContentLoaded', function () {
+            var modals = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(modals);
+        }); */
+       function mey(){
+        $(document).ready(function () {
+            $('.modal').modal;
+        });
+       };
+       mey();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        const todoOlustur = (callback) => {
+            const request = new XMLHttpRequest();
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+            request.send();
+            request.addEventListener('readystatechange', () => {
+                if (request.readyState == 4 && request.status == 200) {
+                    var veriler = JSON.parse(request.responseText);
+                    callback(veriler,undefined);
+                }else if(request.readyState == 4 ){
+                    callback(undefined,'hata oluştu');
+                }
+            });
+        }
+
+        todoOlustur((veri,hata)=>{
+            if(hata){
+                console.log(hata);
+            }else{
+                console.log(veri);
+            }
+        });
+    </script>
+</body>
+
+</html>

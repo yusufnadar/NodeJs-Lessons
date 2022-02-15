@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .udemy{
+        color: limegreen;
+      }
+      .youtube{
+        color: crimson;
+      } 
+    </style>
+</head>
+<body>
+    
+  <ul class="insanlar"></ul>
+<div id="5">
+  <h1 class="nesne">Kullanıcı Bilgileri</h1>
+  <p class="ad">Yusuf Nadaroğlu</p>
+  <p id="yas">30</p>
+  <div class="content">
+    <p>Üyelik Tarihi 40 Ocak</p>
+  </div>
+  <div>
+    <h4 class="kurslar" style="color: #000;">Oluşturduğu Kurslar</h4>
+    <ul id='liste'>
+      <li>Flutter <span style="display: none;">udemy</span> </li>
+      <li>Python <span style="display: none;">udemy</span> </li>
+      <li>Java <span style="display: none;">udemy</span> </li>
+      <li>Nodejs <span style="display: none;">youtube</span> </li>
+      <li>Swift <span style="display: none;">youtube</span> </li>
+    </ul>
+  </div>
+</div>
+
+    <script>
+        const div = document.querySelector('div');
+console.log(div.children);
+// children diyerek altında bulunan elementlere erişebiliriz bunu da listeye çevirdik
+
+const h4 = document.querySelector('h4');
+
+console.log(h4.parentElement.parentElement);
+// elementin iki üstündeki elemente erişebiliyoruz
+
+console.log(h4.nextElementSibling.children[3].previousElementSibling.innerText);
+// aynı sınıf içerisinde bir sonraki elemente nextElementSibling bir önceki elemente previousElementSibling diyerek erişebiliyoruz
+    </script>
+</body>
+</html>
